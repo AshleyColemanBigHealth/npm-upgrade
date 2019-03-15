@@ -11,7 +11,7 @@ export const describe = 'Show changelog for a module';
 export const handler = catchAsyncError(async opts => {
   const {moduleName} = opts;
 
-  console.log(`Trying to find changelog URL for ${strong(moduleName)}...`);
+  // console.log(`Trying to find changelog URL for ${strong(moduleName)}...`);
   let changelogUrl;
   try {
     changelogUrl = await findModuleChangelogUrl(moduleName);
@@ -23,8 +23,8 @@ export const handler = catchAsyncError(async opts => {
   }
 
   if (changelogUrl) {
-    console.log(`Opening ${strong(changelogUrl)}...`);
-    opener(changelogUrl);
+    console.log(`${strong(changelogUrl)}`);
+    // opener(changelogUrl);
   } else {
     console.log(
       "Sorry, we haven't found any changelog URL for this module.\n" +
